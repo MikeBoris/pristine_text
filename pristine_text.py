@@ -4,19 +4,52 @@
 # pristine text
 #
 #
+# stop_words, strip_accents_ascii,
+# and strip_accents_unicode 
+# from:
+# https://github.com/scikit-learn/scikit-learn/blob/a24c8b464d094d2c468a16ea9f8bf8d42d949f84/sklearn/feature_extraction/text.py
 import re
 import unicodedata
 
-from .stop_words import ENGLISH_STOP_WORDS
+#from .stop_words import ENGLISH_STOP_WORDS
 
 # select random document for testing
 
 
-# handle encodings/decodings
-def encoding_decoding(text):
-	pass
+
+class Pristine:
+	""" Text processing for other downstream tasks."""
+
+	def __init__(self, text):
+		""" Instance of pristine text processing
+
+		text 	some text data (e.g., 'Dear John...12345!!')
+
+		>>> from pristine_text import Pristine
+		>>> tt = Pristine('The cow jumped over the moon.')
+		>>> type(tt)
+		<class 'pristine_text.Pristine'>
+		>>> tt
+		<pristine_text.Pristine object at 0x7f9894346208>
+		>>> tt.encoding_decoding()
+		'The cow jumped over the moon.'
+
+		"""
+		self._text = text
+
+	def encoding_decoding(self):
+		""" Handle encodings/decodings"""
+		return self._text
 
 
+
+
+
+
+
+
+
+'''
 
 # handle the character set somehow
 def character_set(text):
@@ -39,7 +72,7 @@ def character_set(text):
 	    """
 	    nkfd_form = unicodedata.normalize('NFKD', s)
 		return nkfd_form.encode('ASCII', 'ignore').decode('ASCII')
-		
+
 	# otherwise use strip_accents_unicode
 	def strip_accents_unicode(s):
     """Transform accentuated unicode symbols into their simple counterpart
@@ -76,7 +109,7 @@ def strip_tags(s):
 
 # handle urls
 def remove_but_store_urls(text):
-	pass
+	pass	
 
 
 # handle special chars
@@ -135,3 +168,6 @@ def make_pristine(text):
 
 if __name__ == '__main__':
 	make_pristine()
+
+
+'''
