@@ -74,6 +74,23 @@ class CreditCard:
 		""" Process customer payment that reduces balance."""
 		self._balance -= amount
 
+class House:
+	""" A house."""
+
+	def __init__(sq, br, ba, ac, bs):
+		""" Create a new house instance.
+
+		sq 		living space squared footage (e.g., '1600')
+		br 		number of bedrooms (e.g. '3')
+		ba 		number of bathrooms (e.g. '1.5')
+		ac 		lot acreage (minus living space)
+		bs 		basement (yes/no)
+		"""
+		self._sq = sq
+		self._br = br
+		self._ba = ba
+		self._ac = ac
+		self._bs = bs
 
 # leading underscore data members like '_balance' are nonpublic
 # in general, try to treat data members as nonpublic
@@ -113,5 +130,5 @@ class Vector:
 			result[j] = self[j] + other[j]
 		return result
 
-	
+
 
