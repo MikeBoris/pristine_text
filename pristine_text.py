@@ -41,8 +41,26 @@ class Pristine:
 		""" Handle encodings/decodings"""
 		return self._text
 
+	def strip_tags(s):
+    """Basic regexp based HTML / XML tag stripper function
+    For serious HTML/XML preprocessing you should rather use an external
+    library such as lxml or BeautifulSoup.
+    """
+	return re.compile(r"<([^>]+)>", flags=re.UNICODE).sub(" ", s)
+
+	# handle urls
+	def remove_but_store_urls(text):
+		pass	
 
 
+# handle special chars
+def remove_special_chars(text):
+	pass
+
+
+# handle word/sentence tokenizing
+def word_tokenize(text):
+	pass
 
 
 
