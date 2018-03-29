@@ -77,7 +77,7 @@ class CreditCard:
 class House:
 	""" A house."""
 
-	def __init__(sq, br, ba, ac, bs):
+	def __init__(self, sq, br, ba, ac, bs):
 		""" Create a new house instance.
 
 		sq 		living space squared footage (e.g., '1600')
@@ -91,6 +91,11 @@ class House:
 		self._ba = ba
 		self._ac = ac
 		self._bs = bs
+
+	def get_sq(self):
+		return 'The listing features a {0} square foot cabana.'.format(self._sq)
+		
+
 
 # leading underscore data members like '_balance' are nonpublic
 # in general, try to treat data members as nonpublic
