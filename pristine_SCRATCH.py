@@ -80,7 +80,15 @@ class House:
 	def __init__(self, sq, br, ba, ac, bs):
 		""" Create a new house instance.
 
-		sq 		living space squared footage (e.g., '1600')
+		>>> from pristine_SCRATCH import House
+		>>> casa = House(1300, 3, 2, 2.0, 'Yes')
+		>>> casa
+		<pristine_SCRATCH.House object at 0x7f2fb18030b8>
+		>>> casa.get_sq()
+		'The listing features 1300 square foot cabana.'
+
+
+		sq 		squared footage living space (e.g., '1600')
 		br 		number of bedrooms (e.g. '3')
 		ba 		number of bathrooms (e.g. '1.5')
 		ac 		lot acreage (minus living space)
@@ -93,8 +101,9 @@ class House:
 		self._bs = bs
 
 	def get_sq(self):
-		return 'The listing features a {0} square foot cabana.'.format(self._sq)
-		
+		return '''The listing features 
+		a {0} square foot cabana.'''.format(self._sq)
+
 
 
 # leading underscore data members like '_balance' are nonpublic
