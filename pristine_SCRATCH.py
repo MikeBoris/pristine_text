@@ -101,10 +101,12 @@ class House:
 		self._bs = bs
 
 	def get_sq(self):
-		return '''The listing features 
-		a {0} square foot cabana.'''.format(self._sq)
+		listing = '''
+		The listing features a {0} square foot cabana.
+		'''
+		return listing.format(self._sq)
 
-
+	
 
 # leading underscore data members like '_balance' are nonpublic
 # in general, try to treat data members as nonpublic
